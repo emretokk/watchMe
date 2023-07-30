@@ -1,53 +1,10 @@
 import React from "react";
+import Slider from "./slider";
 
 export default function Content() {
   return (
-    <div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      asd
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      asd
-    </div>
+    <main className="flex h-165 w-full flex-col bg-gradient-to-b from-no4 to-no1 px-20">
+      <Slider />
+    </main>
   );
 }

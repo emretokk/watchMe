@@ -13,6 +13,11 @@ export default {
       fontFamily: {
         baseFont: ["Domine", "serif"],
       },
+      spacing: {
+        128: "32rem",
+        140: "35rem",
+        165: "41.3rem",
+      },
     },
   },
   plugins: [],
