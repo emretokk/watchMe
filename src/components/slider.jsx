@@ -26,7 +26,7 @@ export default function Slider() {
   };
 
   return (
-    <div id="slider" className="relative my-auto h-[90%] max-w-full">
+    <div id="slider" className="relative my-auto h-165 max-w-full">
       <button className="absolute top-1/2  text-white" onClick={leftArrowClick}>
         <RiArrowLeftSLine size={28} />
       </button>
@@ -41,7 +41,7 @@ export default function Slider() {
         style={{
           backgroundImage: `url(${slides[currentSlideIndex]})`,
         }}
-        className="h-full w-full rounded-3xl bg-cover bg-no-repeat duration-500"
+        className="h-full w-full rounded-t-3xl bg-cover bg-no-repeat duration-500"
       ></div>
     </div>
   );
