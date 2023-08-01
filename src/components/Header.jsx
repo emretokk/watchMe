@@ -30,7 +30,7 @@ export default function Header() {
     <header
       className={`${
         visible ? "top-0" : "-top-20"
-      } sticky z-50 flex h-16 w-full justify-between bg-gradient-to-b from-no1 to-no4 px-20 font-baseFont font-bold text-no5 transition-all duration-500`}
+      } sticky z-50 flex h-16 w-full justify-between bg-gradient-to-tr from-no4 to-no1 px-20 font-baseFont font-bold text-no5 transition-all duration-500`}
     >
       <div id="leftHeader" className="flex w-96 items-center ">
         <div
