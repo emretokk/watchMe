@@ -7,12 +7,33 @@ import dijital from "../assets/dijital-1.jpg";
 import akilli from "../assets/akilli-1.jpg";
 import kadin from "../assets/kadin-1.jpg";
 import cocuk from "../assets/cocuk-1.jpg";
+import casio from "../assets/casio.png";
+import citizen from "../assets/citizen.png";
+import daniel from "../assets/daniel.png";
+import gucci from "../assets/gucci.png";
+import polo from "../assets/polo.png";
+import seiko from "../assets/seiko.png";
+import swatch from "../assets/swatch.png";
+import tissot from "../assets/tissot.png";
+
+function Brand(props) {
+  return (
+    <div className="flex items-center justify-center rounded-full p-2">
+      <div
+        className="h-28 w-28 bg-contain bg-center bg-no-repeat duration-500 hover:h-36 hover:w-36 hover:cursor-pointer"
+        style={{
+          backgroundImage: `url(${props.img})`,
+        }}
+      ></div>
+    </div>
+  );
+}
 
 function Item(props) {
   return (
     <div
       id={props.id}
-      className="relative h-80 w-48 rounded-xl bg-opacity-50 bg-cover bg-center"
+      className="relative h-80 w-48 rounded-xl bg-cover bg-center duration-500 hover:h-96 hover:w-56 hover:cursor-pointer"
       style={{
         backgroundImage: `url(${props.img})`,
       }}
@@ -32,20 +53,40 @@ export default function Content() {
       <Slider />
       <NewWatchesArea />
       <div id="categoriesArea" className="h-fit w-full">
-        <h1 className="ml-20 font-baseFont text-3xl">Categories</h1>
+        <h1 className="ml-20 font-baseFont text-3xl font-bold">
+          Categories for Every Taste and Need
+        </h1>
         <div
           id="categoriesItems"
           className="mt-10 flex h-96 w-full items-center justify-between"
         >
-          <Item id="item1" img={klasik} desc="Klasik" />
-          <Item id="item2" img={spor} desc="Spor" />
+          <Item id="item1" img={klasik} desc="Classic" />
+          <Item id="item2" img={spor} desc="Sport" />
           <Item id="item3" img={dijital} desc="Digital" />
           <Item id="item4" img={akilli} desc="Smart" />
           <Item id="item5" img={kadin} desc="Woman" />
           <Item id="item6" img={cocuk} desc="Child" />
         </div>
       </div>
-      <div className="h-96 w-full bg-red-300"></div>
+      <div id="brandsArea" className="h-fit w-full">
+        <h1 className="ml-20 mt-20 font-baseFont text-3xl font-bold">
+          Brands Galore: Explore the Finest Selection of Top-notch Names
+        </h1>
+
+        <div
+          id="brandsContainer"
+          className="flex h-40 w-full items-center justify-between"
+        >
+          <Brand img={casio} />
+          <Brand img={citizen} />
+          <Brand img={daniel} />
+          <Brand img={gucci} />
+          <Brand img={polo} />
+          <Brand img={seiko} />
+          <Brand img={swatch} />
+          <Brand img={tissot} />
+        </div>
+      </div>
     </main>
   );
 }

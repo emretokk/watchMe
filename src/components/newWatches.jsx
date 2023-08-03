@@ -11,11 +11,11 @@ export default function NewWatchesArea() {
         className=" mt-20 flex h-40 flex-col justify-around  font-baseFont"
       >
         <h1 className="ml-20 text-3xl font-bold">
-          Sevdiklerinizi Mutlu Edin...
+          Thoughtful Gifts for Special Moments
         </h1>
         <p className="w-1/3">
-          Sevdiklerinize olan bağlılığınızı ve onlarla olan özel anlarınızı daha
-          da anlamlı kılmak adına, en yeni modellerimizi inceleyin.
+          To make your affection for your loved ones and your special moments
+          with them even more meaningful, explore our latest watch models
         </p>
       </div>
       <div id="newWatchesImgArea" className="relative h-128">
