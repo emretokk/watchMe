@@ -53,7 +53,7 @@ export default function Content() {
       <Slider />
       <NewWatchesArea />
       <div id="categoriesArea" className="h-fit w-full">
-        <h1 className="ml-20 font-baseFont text-3xl font-bold">
+        <h1 className="ml-20 mt-20 font-baseFont text-3xl font-bold">
           Categories for Every Taste and Need
         </h1>
         <div
@@ -69,13 +69,13 @@ export default function Content() {
         </div>
       </div>
       <div id="brandsArea" className="h-fit w-full">
-        <h1 className="ml-20 mt-20 font-baseFont text-3xl font-bold">
+        <h1 className="ml-20 mt-40 font-baseFont text-3xl font-bold">
           Brands Galore: Explore the Finest Selection of Top-notch Names
         </h1>
 
         <div
           id="brandsContainer"
-          className="flex h-40 w-full items-center justify-between"
+          className="my-10 flex h-40 w-full items-center justify-between"
         >
           <Brand img={casio} />
           <Brand img={citizen} />
