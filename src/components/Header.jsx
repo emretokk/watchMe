@@ -3,11 +3,37 @@ import {
   RiSearchLine,
   RiUser3Line,
   RiShoppingBasketLine,
+  RiArrowUpSFill,
 } from "react-icons/ri";
+
+function Dropdown(props) {
+  return (
+    <div
+      id={props.id}
+      className={`${
+        props.visible ? "top-16" : "-top-40"
+      } absolute left-20 flex h-40 w-96 flex-col`}
+      onMouseLeave={props.makeDropdownHidden}
+    >
+      <div className="relative h-4 w-full">
+        <RiArrowUpSFill className="absolute -top-[6px] h-8 w-8 text-no4" />
+      </div>
+      <div className="h-full grow rounded-2xl bg-no4"></div>
+    </div>
+  );
+}
 
 export default function Header() {
   const [visible, setVisible] = useState(true);
+  const [dropDownVisible, setDropDownVisible] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  const makeDropdownVisible = () => {
+    setDropDownVisible(true);
+  };
+  const makeDropdownHidden = () => {
+    setDropDownVisible(false);
+  };
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
@@ -30,16 +56,22 @@ export default function Header() {
     <header
       className={`${
         visible ? "top-0" : "-top-20"
-      } sticky z-50 flex h-16 w-full justify-between bg-gradient-to-tr from-no4 to-no1 px-20 font-baseFont font-bold text-no5 transition-all duration-500`}
+      } sticky z-50 flex h-16 w-full justify-between bg-gradient-to-tr from-no4 to-no1 px-20 font-baseFont font-bold text-no5 transition-all duration-500 `}
     >
       <div id="leftHeader" className="flex w-96 items-center ">
         <div
           id="newWatches"
           className="flex h-full w-fit items-center justify-center"
+          onMouseEnter={makeDropdownVisible}
         >
           <button className="h-fit w-fit hover:cursor-pointer">
             <h2>New Watches</h2>
           </button>
+          <Dropdown
+            id="dropdown1"
+            visible={dropDownVisible}
+            makeDropdownHidden={makeDropdownHidden}
+          />
         </div>
         <div
           id="categories"
