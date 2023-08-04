@@ -6,17 +6,16 @@ import {
   RiArrowUpSFill,
 } from "react-icons/ri";
 
-function Dropdown(props) {
+function Dropdown1(props) {
   return (
     <div
-      id={props.id}
+      id="dropdown1"
       className={`${
-        props.visible ? "top-16" : "-top-40"
-      } absolute left-20 flex h-40 w-96 flex-col`}
-      onMouseLeave={props.makeDropdownHidden}
+        props.visible ? "opacity-100" : "opacity-0"
+      } absolute left-20 top-16 flex h-40 w-96 flex-col transition-opacity duration-500`}
     >
       <div className="relative h-4 w-full">
-        <RiArrowUpSFill className="absolute -top-[6px] h-8 w-8 text-no4" />
+        <RiArrowUpSFill className={`absolute -top-[6px] h-8 w-8 text-no4`} />
       </div>
       <div className="h-full grow rounded-2xl bg-no4"></div>
     </div>
@@ -63,19 +62,18 @@ export default function Header() {
           id="newWatches"
           className="flex h-full w-fit items-center justify-center"
           onMouseEnter={makeDropdownVisible}
+          onMouseLeave={makeDropdownHidden}
         >
           <button className="h-fit w-fit hover:cursor-pointer">
             <h2>New Watches</h2>
           </button>
-          <Dropdown
-            id="dropdown1"
-            visible={dropDownVisible}
-            makeDropdownHidden={makeDropdownHidden}
-          />
+          <Dropdown1 visible={dropDownVisible} />
         </div>
         <div
           id="categories"
-          className="ml-8 flex h-full w-fit items-center justify-center"
+          className="flex h-full w-fit items-center justify-center pl-8"
+          onMouseEnter={makeDropdownVisible}
+          onMouseLeave={makeDropdownHidden}
         >
           <button className="h-fit w-fit hover:cursor-pointer">
             <h2>Categories</h2>
