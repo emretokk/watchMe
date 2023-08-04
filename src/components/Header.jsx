@@ -22,17 +22,28 @@ function Dropdown1(props) {
   );
 }
 
+function Dropdown2(props) {
+  return (
+    <div
+      id="dropdown2"
+      className={`${
+        props.visible ? "opacity-100" : "opacity-0"
+      } absolute left-32 top-16 flex h-40 w-96 flex-col transition-opacity duration-500`}
+    >
+      <div className="relative h-4 w-full">
+        <RiArrowUpSFill
+          className={`absolute -top-[6px] left-32 h-8 w-8 text-no4`}
+        />
+      </div>
+      <div className="h-full grow rounded-2xl bg-no4"></div>
+    </div>
+  );
+}
+
 export default function Header() {
   const [visible, setVisible] = useState(true);
-  const [dropDownVisible, setDropDownVisible] = useState(false);
+  const [dropDown1Visible, setDropDown1Visible] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-
-  const makeDropdownVisible = () => {
-    setDropDownVisible(true);
-  };
-  const makeDropdownHidden = () => {
-    setDropDownVisible(false);
-  };
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
@@ -61,19 +72,21 @@ export default function Header() {
         <div
           id="newWatches"
           className="flex h-full w-fit items-center justify-center"
-          onMouseEnter={makeDropdownVisible}
-          onMouseLeave={makeDropdownHidden}
+          onMouseEnter={() => {
+            setDropDown1Visible(true);
+          }}
+          onMouseLeave={() => {
+            setDropDown1Visible(false);
+          }}
         >
           <button className="h-fit w-fit hover:cursor-pointer">
             <h2>New Watches</h2>
           </button>
-          <Dropdown1 visible={dropDownVisible} />
+          <Dropdown1 visible={dropDown1Visible} />
         </div>
         <div
           id="categories"
           className="flex h-full w-fit items-center justify-center pl-8"
-          onMouseEnter={makeDropdownVisible}
-          onMouseLeave={makeDropdownHidden}
         >
           <button className="h-fit w-fit hover:cursor-pointer">
             <h2>Categories</h2>
